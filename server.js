@@ -14,15 +14,17 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes)
 
+const MONGODB_URI = 'mongodb+srv://user-1:passwordauth123@cluster0.y5cwp.mongodb.net/workout?retryWrites=true&w=majority'
+
 // connecting to monogoose server
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", 
-//   { 
-//   useNewUrlParser: true, 
-//   useUnifiedTopology: true,
-//   useCreateIndex: true,
-//   useFindAndModify: false
-//   }
-// );
+mongoose.connect(MONGODB_URI || "mongodb://localhost/workout", 
+  { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+  }
+);
 
 // deploying the application to localhost 3000
 app.listen(PORT, () => {
