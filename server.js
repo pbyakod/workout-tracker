@@ -15,14 +15,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes)
 
 // connecting to monogoose server
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", 
-  { 
-  useNewUrlParser: true, 
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-  }
-);
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", 
+//   { 
+//   useNewUrlParser: true, 
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false
+//   }
+// );
 
 // deploying the application to localhost 3000
 app.listen(PORT, () => {
